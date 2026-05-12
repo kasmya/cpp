@@ -46,3 +46,18 @@ while (x > 0) {
     x--;
 }
 ```
+## 🔹 Functions
+```cpp
+int add(int a, int b) {
+    return a + b;
+}
+```
+## 🔹 Arrays & Vectors
+```cpp
+int arr[5] = {1, 2, 3, 4, 5};  // fixed size array
+
+#include <vector>
+vector<int> nums = {1, 2, 3};  // dynamic array
+nums.push_back(4);
+```
+
