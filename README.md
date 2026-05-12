@@ -68,3 +68,35 @@ string s = "Hello";
 cout << s.size();   // length
 cout << s[0];       // indexing
 ```
+## 🔹 STL Algorithms
+```cpp
+#include <algorithm>
+vector<int> v = {3, 1, 4};
+sort(v.begin(), v.end());    // sort
+reverse(v.begin(), v.end()); // reverse
+```
+## 🔹 Classes & Objects
+```cpp
+class Person {
+public:
+    string name;
+    int age;
+
+    void introduce() {
+        cout << "Hi, I'm " << name << endl;
+    }
+};
+
+int main() {
+    Person p;
+    p.name = "Alex";
+    p.age = 21;
+    p.introduce();
+}
+```
+## 🔹 Pointers (Advanced)
+```cpp
+int x = 10;
+int* ptr = &x;   // pointer stores address
+cout << *ptr;    // dereference → prints 10
+```
