@@ -14,5 +14,35 @@ int main() { // entry point of every C++ program
     cout << "Hello, World!" << endl; // like print() in Python
     return 0;
 }
-
+```
 ## 🔹 Variables & Data Types
+```cpp
+int age = 21;        // integer
+double pi = 3.14;    // floating point
+char grade = 'A';    // single character
+string name = "Alex"; // text
+bool isHappy = true; // boolean
+```
+## 🔹 Input & Output
+```cpp
+int x;
+cin >> x;   // input
+cout << x;  // output
+```
+## 🔹 Control Flow
+```cpp
+if (x > 10) {
+    cout << "Big";
+} else {
+    cout << "Small";
+}
+
+for (int i = 0; i < 5; i++) {
+    cout << i << endl;
+}
+
+while (x > 0) {
+    cout << x << endl;
+    x--;
+}
+```
