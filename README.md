@@ -33,7 +33,8 @@ cout << x;  // output
 ```cpp
 if (x > 10) {
     cout << "Big";
-} else {
+}
+else {
     cout << "Small";
 }
 
