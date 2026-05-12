@@ -61,4 +61,10 @@ int arr[5] = {1, 2, 3, 4, 5};  // fixed size array
 vector<int> nums = {1, 2, 3};  // dynamic array
 nums.push_back(4);
 ```
-
+## 🔹 Strings
+```cpp
+#include <string>
+string s = "Hello";
+cout << s.size();   // length
+cout << s[0];       // indexing
+```
