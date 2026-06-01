@@ -66,4 +66,14 @@ int main(){
     cout<<endl;
     int newelement = 10;
     // shift to right side
-    
+    for (int i=5; i>0; i--){
+        arr[i]= arr[i-1];
+    }
+    arr[0] = newelement;
+    cout << "array after insertion at start";
+    for (int i=0; i<6; i++){
+        cout<<arr[0]<<" ";
+    }
+    cout<<endl;
+    return 0;
+}
