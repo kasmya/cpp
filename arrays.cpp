@@ -1,5 +1,5 @@
 // collection of elements of same datatypes
-// stored in adjacent memory locations
+// stored in adjacent/contiguous memory locations
 // elements accessed through indexing 0 to ...
 // a[0]=10 
 // a[4]
@@ -29,4 +29,13 @@ int main(){
 
 }
 
+#include <iostream>
+using namespace std;
+int main(){
+    int arr1[5]={1,2,3,4,5};
+    cout<< "accessing array elements" <<endl;
+    cout<< "element at index 0: << arr[0] <<endl;
+    cout<< "element at index 1: << arr[1] <<endl;
+    return 0;
+}
 
