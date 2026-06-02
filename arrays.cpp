@@ -137,3 +137,4 @@ int main(){
     cout<<endl;
     return 0;
 }
+// b) at any index 
