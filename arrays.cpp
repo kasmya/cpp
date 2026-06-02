@@ -86,4 +86,18 @@ int main(){
     for(int i=0; i<5; i++){
         cout<<arr[i]<<" ";
     }
-cout<<endl;
+    cout<<endl;
+    int position=2;
+    int newelement = 10;
+    // shift right 
+    for (int i=5; i>position; i--){
+        arr[i]=arr[i-1];
+    }
+    arr[position]=newelement;
+    cout<<"new array after insertion";
+    for (int i=0; i<6; i++){
+        cout<<arr[i]<<" ";
+    }
+    cout<<endl;
+    return 0;
+}
