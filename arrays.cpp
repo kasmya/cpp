@@ -138,3 +138,20 @@ int main(){
     return 0;
 }
 // b) at any index 
+#include <iostream>
+using namespace std;
+int main(){
+    int arr[5]={1,2,3,4,5};
+    int n=5;
+    cout <<"original array:";
+    for (int i=0; i<n; i++){
+        cout<<arr[i]<<" ";
+    }
+    cout<<endl;
+    int position =2;
+    if (position<0 || position>=n){
+        cout<<"invalid position"<<endl;
+        return 0;
+    }
+
+    
