@@ -101,3 +101,17 @@ int main(){
     cout<<endl;
     return 0;
 }
+// c) at end 
+#include <iostream>
+using namespace std;
+int main(){
+    int arr[6] ={1,2,3,4,5};
+    int newelement = 10;
+    arr[5] = newelement;
+    cout<<"new array after insertion";
+    for (int i=0; i<6; i++){
+        cout<<arr[i]<<" ";
+    }
+    cout<<endl;
+    return 0;
+}
