@@ -1,6 +1,25 @@
-# 📘 C++ Syntax Cheat Sheet
+# 📘 C++ Basics, DSA & Placement Prep
 
-This README is a quick reference for learning C++ from scratch, especially if you already know Python.
+This repository is a complete resource for:
+- Learning **C++ syntax** from scratch (with Python comparisons for quick transition).
+- Practicing **Data Structures & Algorithms (DSA)** with solved problems.
+- Preparing for **coding interviews and placements** with common questions.
+
+> ⚡ Note: This README is a **cheat sheet** for quick reference.  
+> Detailed code examples are available in individual files inside the repo.
+---
+
+## 📑 Table of Contents
+- [Basics of C++](#-basics-of-c)
+- [Variables & Data Types](#-variables--data-types)
+- [Input & Output](#-input--output)
+- [Control Flow](#-control-flow)
+- [Functions](#-functions)
+- [Arrays & Vectors](#-arrays--vectors)
+- [Strings](#-strings)
+- [STL Algorithms](#-stl-algorithms)
+- [Classes & Objects](#-classes--objects)
+- [Pointers](#-pointers-advanced)
 
 ---
 
