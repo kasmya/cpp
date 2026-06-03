@@ -131,7 +131,7 @@ int main(){
         arr[i] = arr[i+1];
     }
     n--;
-    for (int i=0; i>n; i++){
+    for (int i=0; i<n; i++){
         cout<<arr[i]<<" ";
     }
     cout<<endl;
@@ -143,7 +143,7 @@ using namespace std;
 int main(){
     int arr[5]={1,2,3,4,5};
     int n=5;
-    cout <<"original array:";
+    cout <<"original array: ";
     for (int i=0; i<n; i++){
         cout<<arr[i]<<" ";
     }
@@ -153,5 +153,34 @@ int main(){
         cout<<"invalid position"<<endl;
         return 0;
     }
-
-    
+    //shift left
+    for (int i=0;i<n-1;i++){
+        arr[i]=arr[i+1];
+    }
+    n--;
+    cout<<"array after deletion at position "<<position<<": ";
+    for (int i=0; i<n; i++){
+        cout<<arr[i]<<" ";
+    }
+    cout<<endl;
+    return 0;
+}
+// c) at end
+include <iostream>
+using namespace std;
+int main(){
+    int arr[5]={1,2,3,4,5};
+    int n=5;
+    cout <<"original array: ";
+    for (int i=0; i<n; i++){
+        cout<<arr[i]<<" ";
+    }
+    cout<<endl;
+    n--; //decrease size of array
+    cout<<"array after deletion at end : "<<;
+    for (int i=0; i<n; i++){
+        cout<<arr[i]<<" ";
+    }
+    cout<<endl;
+    return 0;
+}
