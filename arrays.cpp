@@ -255,5 +255,37 @@ int main() {
 #include <iostream>
 using namespace std;
 int main(){
-  
+  int arr[]={1,2,3,4,5,-1};
+  int size = sizeof(arr) / sizeof(arr[0]);
+  int min = arr[0];
+  for (int i=0; i<size; i++){
+      if (min>arr[i]){
+          min= arr[i];
+      }
+  }
+  cout<<"minimum element is: "<<min<<endl;
+  int max = arr[0]; 
+  for (int i=0; i<size; i++){
+      if (max<arr[i]){
+          max = arr[i];
+      }
+  }
+  cout<<"maximum element is: "<<max<<endl;
 }
+// Q5: COUNT OCCURENCE OF GIVEN ARRAY ELEMENTS
+#include <iostream>
+using namespace std; 
+int main(){
+    int count = 0;
+    int element = 2;
+    int arr[] ={1,2,2,3,2,4,5};
+    int size = sizeof(arr) / sizeof(arr[0]);
+    for (int i=0; i<size; i++){
+        if(element==arr[i]){
+          count+=1; //count++;
+        }
+    }
+    cout<<"occurence of element "<<element<<" is: "<<count<<endl;
+}
+// Q6: REVERSE ARRAY
+
