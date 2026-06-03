@@ -184,7 +184,7 @@ int main(){
     cout<<endl;
     return 0;
 }
-// searching elements
+// searching elements (linear search)
 include <iostream>
 using namespace std;
 int main(){
@@ -205,4 +205,55 @@ int main(){
        cout<<"element is not present"<<endl;
     }
     return 0;
+}
+// DSA PROBLEMS
+// Q1: SUM OF ALL ARRAY ELEMENTS
+#include <iostream>
+using namespace std;
+int main(){
+    int arr[6]={2,5,8,9,6,4};
+    int sum = 0;
+    for (int i =0; i < 6; i++){
+        sum += arr[i];
+    }
+    cout<<"sum of array is:"<< sum<< endl;
+}
+// Q2: NUMBER OF ELEMENTS PRESENT IN THE ARRAY 
+#include <iostream>
+using namespace std;
+int main(){
+   int arr[]={1,2,3,4,5};
+   int size = sizeof(arr)/sizeof(arr[1]); // size of array in bytes divided by number of bytes in 1 element = size of elements present in array
+   cout<<size;
+}
+// Q3: FIND AVG OF ARRAY ELEMENTS
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[] = {1, 2, 3, 4, 5};
+    int size = sizeof(arr) / sizeof(arr[0]);
+
+    cout << "Printing original array: " << endl;
+    for (int i = 0; i < size; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+
+    int sum = 0;
+    for (int i = 0; i < size; i++) {
+        sum += arr[i];
+    }
+    cout << "The sum of array is: " << sum << endl;
+
+    double avg = (double)sum / size;
+    cout << "The average of array is: " << avg << endl;
+
+    return 0;
+}
+// Q4: FIND MAX AND MIN ELEMENTS OF ARRAY
+#include <iostream>
+using namespace std;
+int main(){
+  
 }
