@@ -184,3 +184,25 @@ int main(){
     cout<<endl;
     return 0;
 }
+// searching elements
+include <iostream>
+using namespace std;
+int main(){
+    int arr[6] = {1,2,3,5,7,6};
+    int n = 6;
+    int key = 7;
+    bool found = false;
+
+    for (int i=0; i<n; i++){
+        if (arr[i]==key){
+           found = true;
+           cout<<"element"<<key<<" is found at: "<<i<<endl;
+           break;
+        }
+    }
+
+    if(!found){
+       cout<<"element is not present"<<endl;
+    }
+    return 0;
+}
