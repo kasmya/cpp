@@ -10,7 +10,7 @@ This repository is a complete resource for:
 ---
 
 ## 📑 Table of Contents
-- [Basics of C++](#-basics-of-c)
+- [Basics of C++](#-basics)
 - [Variables & Data Types](#-variables--data-types)
 - [Input & Output](#-input--output)
 - [Control Flow](#-control-flow)
