@@ -288,4 +288,16 @@ int main(){
     cout<<"occurence of element "<<element<<" is: "<<count<<endl;
 }
 // Q6: REVERSE ARRAY
-
+#include <iostream>
+using namespace std;
+int main(){
+    int arr[4]={1,2,3,4};
+    int brr[4];
+    for(int i=3; i>=0; i--){
+       brr[4-1-i]=arr[i];
+    }
+    for(int i=0; i<4; i++) {
+    cout << brr[i] << " ";
+    }
+    cout << endl;
+}
