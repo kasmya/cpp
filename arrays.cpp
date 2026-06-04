@@ -301,3 +301,50 @@ int main(){
     }
     cout << endl;
 }
+// method 2 
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[4] = {1,2,3,4};
+    int start = 0;
+    int end = 3; 
+
+    while (start < end) {
+        int temp = arr[start];
+        arr[start] = arr[end];
+        arr[end] = temp;
+        start++;
+        end--;
+    }
+    for(int i = 0; i < 4; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+}
+// Q7: PRINT EVEN ODD ELEMENTS
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[] = {1,2,3,4,5,6};
+    int size = sizeof(arr) / sizeof(arr[0]);
+
+    cout << "printing even elements: " << endl;
+    for (int i = 0; i < size; i++) {
+        if (arr[i] % 2 == 0) {
+            cout << arr[i] << " ";
+        }
+    }
+    cout << endl;
+
+    cout << "printing odd elements: " << endl;
+    for (int i = 0; i < size; i++) {
+        if (arr[i] % 2 != 0) {
+            cout << arr[i] << " ";
+        }
+    }
+    cout << endl;
+
+    return 0;
+}
