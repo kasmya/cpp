@@ -348,3 +348,44 @@ int main() {
 
     return 0;
 }
+// Q8: CHECK IF DUPLICATES EXIST
+#include <iostream>
+using namespace std; 
+int main(){
+    int count = 0;
+    int element = 2;
+    int arr[] ={1,2,2,3,4,5};
+    int size = sizeof(arr) / sizeof(arr[0]);
+    for (int i=0; i<size; i++){
+        if(element==arr[i]){
+          count+=1; //count++;
+        }
+    }
+    if (count ==2){
+        cout<<"element is duplicate";
+    }
+    else{
+        cout<<"element is not dupliacte";
+    }
+    cout<<endl;
+}
+// Q9: FIND SECOND LARGEST ELEMENT
+#include <iostream>
+using namespace std;
+int main(){
+    int arr[]={1,2,3,4,5,6};
+    int size = sizeof(arr) / sizeof(arr[0]);
+    int max = arr[0];
+    int smax = arr[0];
+    for (int i=0; i<size; i++){
+        if (max < arr[i]){
+           smax = max;
+           max = arr[i];
+        }
+        else if(smax<arr[i] && arr[i] != max){
+             smax = arr[i];
+        }
+    }
+    cout<<"maximum is: "<<max<<endl;
+    cout<<"second maximum is: "<<smax<<endl;
+}
