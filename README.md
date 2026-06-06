@@ -3,7 +3,7 @@
 This repository is a complete resource for:
 - Learning **C++ syntax** from scratch (with Python comparisons for quick transition).
 - Practicing **Data Structures & Algorithms (DSA)** with solved problems.
-- Preparing for **coding interviews and placements** with common questions.
+- Preparing for **coding interviews and placements** with common leetcode questions.
 
 > ⚡ Note: This README is a **cheat sheet** for quick reference.  
 > Detailed code examples are available in individual files inside the repo.
