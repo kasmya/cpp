@@ -60,4 +60,9 @@ int main(){
   vector<vector<int>> mat(3,vector<int>(2));
   vector <int> brr;
   brr.push_back(6); //insertion
+  brr.push_back(60); 
+  brr.push_back(67);
+  cout<<brr.size();
+  for (int i=0; i<brr.size(); i++){
+  }
 }
