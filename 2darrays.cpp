@@ -69,4 +69,36 @@ int main(){
   cout<<endl;
   brr.pop_back(); //deletion of last element 
   cout<<brr.at(3); //accessing value at 3rd index
+  cout<<brr.front(); //accessing 1st element
+  cout<<brr.back(); //last element
+  cout<<brr.size()<<endl; //the size of current array/elements present currently
+  cout<<brr.capacity()<<endl<<endl; //doubles the size of the previouys element, allocated memory size
+  cout<<brr.emplace_back(21); //places element in the back, faster than push_back() 
 }
+// common functions
+// 1. sorting
+// sort(v.begin(), v.end()) ascending
+// sort(v.rbegin(), v.rend()) descending 
+// 2. reverse 
+// reverse(v.begin(), v.end())
+// 3. find element
+// find(v.begin(),v.end(),x)
+// 3. count element
+// count(v.begin(),v.end(),x)
+#include <algorithm> // use built in header file to use built in function
+int main(){
+    sort(brr.begin(),brr.end());
+    cout<<"array after sorting "<<endl;
+    for( int i=0; i<brr.size();i++){
+       cout<<brr[i]<<" "
+    }
+    cout<<endl;
+    auto it find(brr.begin(),brr.end(),50)
+    if (it != end()){
+      cout<<distance(brr.begin(), it);
+    }
+  else{
+    cout<<"element not found";
+}
+
+
