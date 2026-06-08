@@ -64,5 +64,9 @@ int main(){
   brr.push_back(67);
   cout<<brr.size();
   for (int i=0; i<brr.size(); i++){
+    cout<<brr[i]<<" ";
   }
+  cout<<endl;
+  brr.pop_back(); //deletion of last element 
+  cout<<brr.at(3); //accessing value at 3rd index
 }
