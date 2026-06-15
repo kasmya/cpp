@@ -100,7 +100,8 @@ int main(){
   else{
     cout<<"element not found";
 }
-// LEETCODE QUESTIONS
+// LEETCODE 1
+// TWO SUM 
 // Q1: Given an array of integers nums and an integer target, return indices ofthe two numbers such that they add up to target.
 /* You may assume that each input would have exactly one solution, and you may not use the some element twice.
 You can return the answer in any order.
@@ -137,6 +138,9 @@ public:
         return{-1,-1};
     }
 };
+
+// LEETCODE 26
+// REMOVE DUPLICATES FROM SORTED ARRAY
 // Q2: Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept the same.
 /*
 Consider the number of unique elements in nums to be k​​​​​​​​​​​​​​. After removing duplicates, return the number of unique elements k.
@@ -195,7 +199,7 @@ public:
    }
 };
 
-// Q3: LEETCODE QUES 27 
+// Q3: LEETCODE 27 
 // REMOVE DUPLICATE ELEMENT
 /* Given an integer array nums and an integer val, remove all occurrences of val in nums in-place. The order of the elements may be changed. Then return the number of elements in nums which are not equal to val.
 
@@ -261,8 +265,8 @@ public:
     }
 };
 
-// Q4: PLUS ONE
-// LEETCODE 66
+// Q4: LEETCODE 66 
+// PLUS ONE
 /* You are given a large integer represented as an integer array digits, where each digits[i] is the ith digit of the integer. The digits are ordered from most significant to least significant in left-to-right order. The large integer does not contain any leading 0's.
 
 Increment the large integer by one and return the resulting array of digits.
@@ -298,3 +302,19 @@ Constraints:
 0 <= digits[i] <= 9
 digits does not contain any leading 0's.
 */
+class Solution {
+public:
+    vector<int> plusOne(vector<int>& digits) {
+        int n = digits.size();
+        for (int i = n-1; i>=0; i--){
+            if (digits[i]<9){
+                digits[i]++;
+                return digits;
+            } 
+            digits[i] = 0;
+        }
+        digits.insert(digits.begin(), 1);
+        return digits;
+    }
+};
+
