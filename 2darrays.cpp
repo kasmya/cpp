@@ -339,3 +339,22 @@ n == matrix[i].length
 1 <= m, n <= 10
 -100 <= matrix[i][j] <= 100
 */ 
+
+class Solution {
+public:
+    vector<int> spiralOrder(vector<vector<int>>& matrix) {
+        int m = matrix.size();
+        int n = matrix[0].size();
+        vector<int> result;
+        int top = 0;
+        int down = m-1;
+        int left = 0;
+        int right = n-1;
+        int id = 0;
+        while(top <= down && left <= right){
+            if (id == 0){
+                
+            }
+        } 
+    }
+};
