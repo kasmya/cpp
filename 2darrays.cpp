@@ -343,26 +343,42 @@ n == matrix[i].length
 class Solution {
 public:
     vector<int> spiralOrder(vector<vector<int>>& matrix) {
-        int m = matrix.size();
-        int n = matrix[0].size();
+        int m = matrix.size(); //rows
+        int n = matrix[0].size(); //columns
         vector<int> result;
-        int top = 0;
-        int down = m-1;
-        int left = 0;
-        int right = n-1;
+        int top = 0; //starting row index
+        int down = m-1; //ending row index
+        int left = 0; //starting col index
+        int right = n-1; //ending col index 
         int id = 0;
         while(top <= down && left <= right){
             if (id == 0){ //left to right
               for (int i = left; i<=right; i++){
                 result.push_back(matrix[top][i]);
                }
-              top++;
+              top++; //move up, as the prev row is done
             }
             if (id == 1){ //top to down
-              for (int i=top; i<=down; i++){
+              for (int i = top; i<=down; i++){
                 result.push_back(matrix[i][right]);
               }
               right--;
             }
-        }          
+          if (id == 2){ //right to left
+            for (int i = right; i>=left; i--){
+              result.push_back(matrix[down][i]);
+            }
+            down--;
+          }
+          if (id == 3){ //down to top 
+            for (int i = down; i>=top; i--){
+              result.push_back(matrix[i][left]);
+            }
+            left++;
+          }
+          id = (id+1)%4;
+        }
+      return result;
 };
+// Q6: LEETCODE 59
+// SPIRAL MATRIX II
