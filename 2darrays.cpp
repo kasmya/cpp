@@ -352,9 +352,17 @@ public:
         int right = n-1;
         int id = 0;
         while(top <= down && left <= right){
-            if (id == 0){
-                
+            if (id == 0){ //left to right
+              for (int i = left; i<=right; i++){
+                result.push_back(matrix[top][i]);
+               }
+              top++;
             }
-        } 
-    }
+            if (id == 1){ //top to down
+              for (int i=top; i<=down; i++){
+                result.push_back(matrix[i][right]);
+              }
+              right--;
+            }
+        }          
 };
