@@ -319,7 +319,7 @@ public:
 };
 
 // Q5: LEETCODE 54
-// SPIRAL MATRIX 
+// SPIRAL MATRIX (MXN)
 /* Given an m x n matrix, return all elements of the matrix in spiral order.
 
 Example 1:
@@ -381,4 +381,30 @@ public:
       return result;
 };
 // Q6: LEETCODE 59
-// SPIRAL MATRIX II
+// SPIRAL MATRIX II (NXN)
+/* Given a positive integer n, generate an n x n matrix filled with elements from 1 to n2 in spiral order.
+Example 1:
+Input: n = 3
+Output: [[1,2,3],[8,9,4],[7,6,5]]
+Example 2:
+
+Input: n = 1
+Output: [[1]]
+ 
+Constraints:
+1 <= n <= 20
+*/
+class Solution {
+public:
+    vector<vector<int>> generateMatrix(int n) {
+        int top = 0;
+        int down = n-1;
+        int left = 0;
+        int right = n-1;
+        int id = 0; //direction
+        int num = 1;
+        while(top <= down && left <= right){
+            result [top][i] = num++;
+        }
+    }
+};
