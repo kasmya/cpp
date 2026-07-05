@@ -13,6 +13,7 @@
 
 // pass 1: 5 4 3 2 1 
 // n - pass = 5 - 1 = 4 steps - hence no need to check last element (5th)
+// size - pass ensures bubble sort doesn’t waste time checking elements that are already in their correct positions after each pass.
 // if i > i+1 then swap element 
 // 4 5 3 2 1
 // 4 3 5 2 1
