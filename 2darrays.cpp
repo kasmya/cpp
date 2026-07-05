@@ -404,7 +404,12 @@ public:
         int id = 0; //direction
         int num = 1;
         while(top <= down && left <= right){
-            result [top][i] = num++;
+          if (id == 0){
+            for (int i = left; i<right; i++){
+              result [top][i] = num++;
+            }
+            top++;
+          }
         }
     }
 };
