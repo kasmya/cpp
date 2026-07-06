@@ -73,3 +73,67 @@ int main(){
   cout<< endl;
   return 0;
 }
+
+// optimised code 
+#include <iostream>
+using namespace std;
+int main(){
+  int arr[] = {1,2,3,4,5,6};
+  int size = sizeof(arr)/sizeof(arr[0]);
+  cout<< "printing original array:"<< endl;
+  for (int i = 0; i<size; i++){
+    cout<<arr[i]<< " ";
+  }
+  cout<< endl;
+  
+  for (int pass = 1; pass<size; pass++){
+    bool flag = false; // added logic for optimisation; flag is a smart check that prevents Bubble Sort from doing extra work when the array is already sorted.
+    for (int i = 0; i<size-pass; i++){
+      if (arr[i] > arr[i+1]){
+        swap(arr[i], arr[i+1]);
+        flag = true; // indicates swap occured 
+      }
+    }
+    if (flag == false){ // no swaps happened , break out of the loop early.
+      cout<<"array is already sorted"<<endl;
+      break
+    }
+  }
+  
+  cout<< "printing after sorting:"<<endl;
+  for (int i = 0; i<size; i++){
+    cout<<arr[i]<< " ";
+  }
+  cout<< endl;
+  return 0;
+}
+/*
+Normal Bubble Sort:
+- Bubble Sort works by repeatedly swapping adjacent elements if they are in the wrong order.
+- Even if the array becomes sorted early, the algorithm still continues through all passes, wasting time.
+
+Role of flag:
+- At the start of each pass, you set flag = false.
+- If any swap happens during that pass, you set flag = true.
+- If no swap happens (flag remains false), it means the array is already sorted, so you can break out of the loop early instead of continuing unnecessary passes.
+
+Why it’s useful:
+- Best case (array already sorted): Bubble Sort finishes in O(n) time instead of O(n²).
+- Worst case (array reversed): Still O(n²), but no worse than standard Bubble Sort.
+
+Dry Run Example:
+Array: {1, 2, 3, 4, 5} (already sorted)
+
+Pass 1:  
+Compare each pair → no swaps.
+flag stays false.
+→ Algorithm prints "array is already sorted" and exits.
+= Only 1 pass instead of 5.
+
+Array: {5, 1, 4, 2, 8} (unsorted)
+- Pass 1: swaps happen → flag = true. Continue.
+- Pass 2: swaps happen → flag = true. Continue.
+- Pass 3: swaps happen → flag = true. Continue.
+- Pass 4: no swaps → flag = false. Stop early.
+= Sorted in 4 passes instead of always forcing 5.
+*/
