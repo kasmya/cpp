@@ -275,3 +275,13 @@ Pass 6 (i = 6, temp = 3):
 */
 
 // 3. MERGE SORTING
+// - works on the concept of divide and conquer
+// - divided into sub-problems of same type
+// - each sub-problem is conquered independantly 
+// - results of each sub-problem combined to form solution 
+
+// algorithm :
+// - split array into 2 halves 
+// - sort the split array
+// - finally combine them 
+
