@@ -117,7 +117,7 @@ Role of flag:
 - If any swap happens during that pass, you set flag = true.
 - If no swap happens (flag remains false), it means the array is already sorted, so you can break out of the loop early instead of continuing unnecessary passes.
 
-Why it’s useful: (*)
+* Why it’s useful: 
 - Best case (array already sorted): Bubble Sort finishes in O(n) time instead of O(n²). avg case O(n²)
 - Worst case (array reversed): Still O(n²), but no worse than standard Bubble Sort.
 
