@@ -118,8 +118,9 @@ Role of flag:
 - If no swap happens (flag remains false), it means the array is already sorted, so you can break out of the loop early instead of continuing unnecessary passes.
 
 * Why it’s useful: 
-- Best case (array already sorted): Bubble Sort finishes in O(n) time instead of O(n²). avg case O(n²)
-- Worst case (array reversed): Still O(n²), but no worse than standard Bubble Sort.
+(time complexity)
+- Best case (array already sorted): Bubble Sort finishes in O(n) time instead of O(n²). 
+- Worst & avg case (array reversed): Still O(n²), but no worse than standard Bubble Sort.
 
 Dry Run Example:
 Array: {1, 2, 3, 4, 5} (already sorted)
@@ -171,4 +172,106 @@ Array: {5, 1, 4, 2, 8} (unsorted)
 // 1 -2 2 3 4 5
 // -2 1 2 3 4 5
 
+// pseudocode
+// if (arr[j] > key){ 
+// arr [j+1] = arr[j] }
+// else {
+// break };
 
+// key : This is the element we’re currently trying to insert into the correct position in the sorted part of the array.
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[] = {1, 5, 8, 2, -12, 78, 3};
+    int size = sizeof(arr) / sizeof(arr[0]);
+
+    cout << "Printing original array:" << endl;
+    for (int i = 0; i < size; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+
+    // Insertion sort logic
+    for (int i = 1; i < size; i++) {
+        int temp = arr[i];   // key element
+        int j = i - 1;
+
+        // shift elements greater than temp to the right
+        for (; j >= 0; j--) {
+            if (arr[j] > temp) {
+                arr[j + 1] = arr[j];
+            } else {
+                break;
+            }
+        }
+        // place temp in its correct position
+        arr[j + 1] = temp;
+    }
+
+    cout << "Printing sorted array:" << endl;
+    for (int i = 0; i < size; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
+
+// algorithm :
+// 1. start from second element
+// 2. store the current element as key
+// 3. compare the elements to its left and shift it to the right if left is greater than key
+// 4. once correct position is found insert the key
+
+// time complexity:
+// best case (array already sorted) - O(n)
+// worst & avg case - O(n²)
+
+/*
+
+Dry Run with `arr = {1, 5, 8, 2, -12, 78, 3}`
+
+Pass 1 (i = 1, temp = 5):
+- Compare arr[0] = 1 with temp = 5 → 1 is not greater, break.
+- Place temp at arr[1].
+- Array stays: `[1, 5, 8, 2, -12, 78, 3]`.
+
+Pass 2 (i = 2, temp = 8):
+- Compare arr[1] = 5 with 8 → not greater, break.
+- Place temp at arr[2].
+- Array stays: `[1, 5, 8, 2, -12, 78, 3]`.
+
+Pass 3 (i = 3, temp = 2):
+- Compare arr[2] = 8 > 2 → shift → `[1, 5, 8, 8, -12, 78, 3]`.
+- Compare arr[1] = 5 > 2 → shift → `[1, 5, 5, 8, -12, 78, 3]`.
+- Compare arr[0] = 1 > 2 → false, break.
+- Place temp at arr[1].
+- Result: `[1, 2, 5, 8, -12, 78, 3]`.
+
+Pass 4 (i = 4, temp = -12):
+- Compare arr[3] = 8 > -12 → shift → `[1, 2, 5, 8, 8, 78, 3]`.
+- Compare arr[2] = 5 > -12 → shift → `[1, 2, 5, 5, 8, 78, 3]`.
+- Compare arr[1] = 2 > -12 → shift → `[1, 2, 2, 5, 8, 78, 3]`.
+- Compare arr[0] = 1 > -12 → shift → `[1, 1, 2, 5, 8, 78, 3]`.
+- j = -1, loop ends.
+- Place temp at arr[0].
+- Result: `[-12, 1, 2, 5, 8, 78, 3]`.
+
+Pass 5 (i = 5, temp = 78):
+- Compare arr[4] = 8 > 78 → false, break.
+- Place temp at arr[5].
+- Array stays: `[-12, 1, 2, 5, 8, 78, 3]`.
+
+Pass 6 (i = 6, temp = 3):
+- Compare arr[5] = 78 > 3 → shift → `[-12, 1, 2, 5, 8, 78, 78]`.
+- Compare arr[4] = 8 > 3 → shift → `[-12, 1, 2, 5, 8, 8, 78]`.
+- Compare arr[3] = 5 > 3 → shift → `[-12, 1, 2, 5, 5, 8, 78]`.
+- Compare arr[2] = 2 > 3 → false, break.
+- Place temp at arr[3].
+- Final result: `[-12, 1, 2, 3, 5, 8, 78]`.
+
+*/
+
+// 3. MERGE SORTING
