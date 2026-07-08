@@ -285,3 +285,29 @@ Pass 6 (i = 6, temp = 3):
 // - sort the split array
 // - finally combine them 
 
+#include <iostream>
+#include <vector>
+using namespace std;
+
+void merge(vector<int> &arr, int left, int mid, int right){
+  vector<int> temp;
+  int i = left;
+  int j = mid+1;
+}
+
+void mergeSort(vector<int> &arr, int left, int right){
+  if (left >= right) return;
+  int mid = (left+right)/2;
+  mergeSort(arr, left, mid);
+  mergeSort(arr, mid+1, right);
+  merge(arr,left,mid,right);
+  
+}
+
+int main(){
+  vector<int> arr = {1,2,3,45,0};
+  int n = arr.size();
+  mergeSort(arr, 0, n-1);
+  
+  
+}
