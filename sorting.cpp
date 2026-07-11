@@ -346,3 +346,23 @@ int main() {
     cout << endl;
     return 0;
 }
+
+// 4. SELECTION SORTING 
+// - works on comparison
+// - it selects min element from unsorted portion and places at the beginning, one element at a time, repeats until array is sorted
+
+// eg array: 29 10 14 37 13
+// 29 is taken as i, 10 is min hence swap
+// 10 29 14 37 13 
+// here 29 is i, 13 is min hence swap (i++)
+// 10 13 14 37 29
+// here 14 is i, no swap as 14 is min
+// 10 13 14 37 29
+// here 37 is i, swap with 29
+// 10 13 14 29 37 hence sorted
+
+// algorithm:
+// for(i = 0; i <n-1; i++){
+// minindex = i;
+// minval = arr[i];
+// 
