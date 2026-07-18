@@ -363,6 +363,42 @@ int main() {
 
 // algorithm:
 // for(i = 0; i <n-1; i++){
-// minindex = i;
-// minval = arr[i];
-// 
+// minindex = arr[i];
+// minval = i;
+// for(j = i; j <n; j++){
+// if (minval > arr[j]){
+// minval = arr[j];
+// minindex = j;
+// } }
+// arr[minindex] = arr[i];
+// arr[i] = minval;
+
+#include <iostream>
+using namespace std;
+int main(){
+  int arr[]={1,3,2,5,4,0};
+  cout<<"printing array before sorting"<<endl;
+  for (int i=0; i<6; i++){
+    cout<<arr[i]<<" ";
+  }
+  cout<<endl;
+  //sorting logic
+  int n = 6;
+  for(i = 0; i <n-1; i++){
+     minindex = arr[i];
+     minval = i;
+     for(j = i; j <n; j++){
+       if (minval > arr[j]){
+         minval = arr[j];
+         minindex = j;
+       }
+     }
+     arr[minindex] = arr[i];
+     arr[i] = minval;
+   }
+  cout<<"printing array after sorting"<<endl;
+  for (int i=0; i<6; i++){
+    cout<<arr[i]<<" ";
+  }
+  return 0;
+}
