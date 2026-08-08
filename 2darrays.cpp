@@ -397,19 +397,44 @@ Constraints:
 class Solution {
 public:
     vector<vector<int>> generateMatrix(int n) {
+        vector<vector<int>> result(n, vector<int>(n, 0));
+        
         int top = 0;
-        int down = n-1;
+        int down = n - 1;
         int left = 0;
-        int right = n-1;
-        int id = 0; //direction
+        int right = n - 1;
+        int id = 0; // direction: 0=left→right, 1=top→down, 2=right→left, 3=down→top
         int num = 1;
-        while(top <= down && left <= right){
-          if (id == 0){
-            for (int i = left; i<right; i++){
-              result [top][i] = num++;
+
+        while (top <= down && left <= right) {
+            if (id == 0) {
+                // left → right
+                for (int i = left; i <= right; i++) {
+                    result[top][i] = num++;
+                }
+                top++;
+            } else if (id == 1) {
+                // top → down
+                for (int i = top; i <= down; i++) {
+                    result[i][right] = num++;
+                }
+                right--;
+            } else if (id == 2) {
+                // right → left
+                for (int i = right; i >= left; i--) {
+                    result[down][i] = num++;
+                }
+                down--;
+            } else if (id == 3) {
+                // down → top
+                for (int i = down; i >= top; i--) {
+                    result[i][left] = num++;
+                }
+                left++;
             }
-            top++;
-          }
+            id = (id + 1) % 4; // cycle direction
         }
+        
+        return result;
     }
 };
