@@ -22,35 +22,40 @@ Constraints:
 class Solution {
 public:
     void merge(vector<int>& nums, int left, int mid, int right) {
-        int n1 = mid - left + 1;
-        int n2 = right - mid;
+        vector<int> temp;  // temporary vector
 
-        // Temporary arrays
-        vector<int> L(n1), R(n2);
+        int i = left;      // pointer for left half
+        int j = mid + 1;   // pointer for right half
 
-        // Copy data
-        for (int i = 0; i < n1; i++) L[i] = nums[left + i];
-        for (int j = 0; j < n2; j++) R[j] = nums[mid + 1 + j];
-
-        // Merge temp arrays back into nums[left..right]
-        int i = 0, j = 0, k = left;
-        while (i < n1 && j < n2) {
-            if (L[i] <= R[j]) {
-                nums[k++] = L[i++];
+        // Merge both halves into temp
+        while (i <= mid && j <= right) {
+            if (nums[i] <= nums[j]) {
+                temp.push_back(nums[i++]);
             } else {
-                nums[k++] = R[j++];
+                temp.push_back(nums[j++]);
             }
         }
 
-        // Copy remaining elements
-        while (i < n1) nums[k++] = L[i++];
-        while (j < n2) nums[k++] = R[j++];
+        // Copy remaining elements from left half
+        while (i <= mid) {
+            temp.push_back(nums[i++]);
+        }
+
+        // Copy remaining elements from right half
+        while (j <= right) {
+            temp.push_back(nums[j++]);
+        }
+
+        // Copy sorted temp back into nums
+        for (int k = left; k <= right; k++) {
+            nums[k] = temp[k - left];
+        }
     }
 
     void mergesort(vector<int>& nums, int left, int right) {
         if (left >= right) return;
 
-        int mid = left + (right - left) / 2;
+        int mid = (left + right) / 2;
         mergesort(nums, left, mid);
         mergesort(nums, mid + 1, right);
         merge(nums, left, mid, right);
@@ -61,4 +66,3 @@ public:
         return nums;
     }
 };
-
