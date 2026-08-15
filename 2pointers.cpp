@@ -230,3 +230,48 @@ public:
         return result;
     }
 };
+// PROBLEM 97: SORT AN ARRAY BY PARITY
+/*
+Given an integer array nums, move all the even integers at the beginning of the array followed by all the odd integers.
+
+Return any array that satisfies this condition.
+
+ 
+
+Example 1:
+
+Input: nums = [3,1,2,4]
+Output: [2,4,3,1]
+Explanation: The outputs [4,2,3,1], [2,4,1,3], and [4,2,1,3] would also be accepted.
+Example 2:
+
+Input: nums = [0]
+Output: [0]
+*/
+class Solution {
+public:
+    vector<int> sortArrayByParity(vector<int>& nums) {
+        int i = 0;                  // pointer from left
+        int j = nums.size() - 1;    // pointer from right
+
+        // loop until pointers meet
+        while (i < j) {
+            if (nums[i] % 2 > nums[j] % 2) {
+                // nums[i] is odd and nums[j] is even → swap
+                swap(nums[i], nums[j]);
+            }
+
+            if (nums[i] % 2 == 0) {
+                // nums[i] is even → move i forward
+                i++;
+            }
+
+            if (nums[j] % 2 == 1) {
+                // nums[j] is odd → move j backward
+                j--;
+            }
+        }
+
+        return nums; // array now has evens first, odds later
+    }
+};
