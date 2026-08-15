@@ -275,3 +275,26 @@ public:
         return nums; // array now has evens first, odds later
     }
 };
+//easier code
+class Solution {
+public:
+    vector<int> sortArrayByParity(vector<int>& nums) {
+        int n = nums.size();
+
+        int i = 0;  // pointer for "placement of next even number"
+        int j = 0;  // pointer for scanning through the array
+
+        // scan the array from left to right
+        while (j < n) {
+            if (nums[j] % 2 == 0) {
+                // if nums[j] is even → put it at position i
+                // swap ensures even numbers are collected at the front
+                swap(nums[i], nums[j]);
+                i++; // move placement pointer forward
+            }
+            j++; // always move scanning pointer forward
+        }
+
+        return nums; // evens first, odds later
+    }
+};
